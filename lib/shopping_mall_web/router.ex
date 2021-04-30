@@ -17,9 +17,12 @@ defmodule ShoppingMallWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :index
-    get "/cart", CartController, :index
+    #get "/cart", CartController, :index
     get "/cart/increment", CartController, :web_inc
     get "/cart/decrement", CartController, :web_dec
+
+    get "/carts", CartController, :index
+    get "/carts/:id", CartController, :show
   end
 
   # Other scopes may use custom stacks.
